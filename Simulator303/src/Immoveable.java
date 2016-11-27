@@ -8,8 +8,8 @@ public class Immoveable extends Item {
 	/**
 	 * Constructor for Immoveable
 	 */
-	public Immoveable(){
-		super("Immoveable", 'I');
+	public Immoveable(int x, int y){
+		super("Immoveable", 'I', x, y);
 	}
 	
 }

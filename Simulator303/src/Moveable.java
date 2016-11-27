@@ -8,8 +8,8 @@ public class Moveable extends Item{
 	/**
 	 * Constructor for Moveable
 	 */
-	public Moveable(){
-		super("Moveable", 'M');
+	public Moveable(int x, int y){
+		super("Moveable", 'M', x, y);
 	}
 	
 }
