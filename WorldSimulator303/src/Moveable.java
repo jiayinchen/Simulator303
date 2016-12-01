@@ -6,8 +6,8 @@ public class Moveable extends Item{
 	 * @param x starting x coordinate of Moveable
 	 * @param y starting y coordinate of Moveable
 	 */
-	public Moveable(){
-		super("Moveable", 'M', 0, 0);
+	public Moveable(int row, int col){
+		super("Moveable", 'M', row, col);
 	}
 	
 }

@@ -1,11 +1,9 @@
 
 public class Autonomous extends Item{
 
-	/**
-	 * Constructor for Autonomous
-	 */
-	public Autonomous(){
-		super("Autonomous", 'A', 0, 0);
+	
+	public Autonomous(int row, int col){
+		super("Autonomous", 'A', row, col);
 	}
 	
 	/**
@@ -13,12 +11,16 @@ public class Autonomous extends Item{
 	 */
 	public void step(){
 		int[] direction = randomDirection();
-		move(direction[0], direction[1]);
+		boolean moved = move(direction[0], direction[1]);
+		while (!moved){
+			direction = randomDirection();
+			moved = move(direction[0], direction[1]);
+		}
 	}
 	
 	/**
 	 * Generate a random direction (N, S, W, E)
-	 * @return change in (x,y) to the direction
+	 * @return row or column shift towards the random direction
 	 */
 	private int[] randomDirection(){
 		int randomDir = (int)(Math.random()*4);
@@ -26,19 +28,19 @@ public class Autonomous extends Item{
 		
 		// N = 0
 		if (randomDir == 0){
-			direction = new int[]{0, 1};
+			direction = new int[]{-1, 0};
 		}
 		// W = 1 
 		else if (randomDir == 1){
-			direction = new int[]{-1, 0};
+			direction = new int[]{0, -1};
 		}
 		// S = 2
 		else if (randomDir == 2){
-			direction = new int[]{0, -1};
+			direction = new int[]{1, 0};
 		}
 		// E = 3
 		else{
-			direction =  new int[]{1, 0};
+			direction =  new int[]{0, 1};
 		}
 		
 		return direction;
