@@ -141,7 +141,7 @@ public class World {
 	 */
 	private boolean isValidPosition(int row, int col){
 		// position doesn't exist
-		if(row < 0 || row > rowNum || col < 0 || col > colNum){
+		if(row < 0 || row >= rowNum || col < 0 || col >= colNum){
 			return false;
 		}
 		return true;
